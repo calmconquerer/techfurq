@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>NewBiz Bootstrap Template</title>
+  <title>TechFurq - IT Company</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{% static 'portfolio/img/favicon.png' %}" rel="icon">
+  <!--<link href="{% static 'portfolio/img/favicon.png' %}" rel="icon">-->
   <link href="{% static 'portfolio/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -47,7 +47,7 @@
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-        <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
+        <a href="#intro" class="scrollto"><img src="{% static 'portfolio/img/logo.png' %}" alt="" class="img-fluid"></a>
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
@@ -92,7 +92,7 @@
       </div>
 
       <div class="intro-info">
-        <h2>We provide<br><span>solutions</span><br>for your business!</h2>
+        <h2>We Create<br><span>Websites</span><br>and <span>Applications</span></h2>
         <div>
           <a href="#about" class="btn-get-started scrollto">Get Started</a>
           <a href="#services" class="btn-services scrollto">Our Services</a>
@@ -112,44 +112,52 @@
 
         <header class="section-header">
           <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            {% for i in about_us_quotes %}
+              <p>
+                {{ i.content }}
+              </p>
+            {% endfor %}
+
         </header>
 
         <div class="row about-container">
 
           <div class="col-lg-6 content order-lg-1 order-2">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            {% for i in about_us %}
+              <p>
+                {{i.content}}
+              </p>
+            {% endfor %}
 
-            <div class="icon-box wow fadeInUp">
-              <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
+            <!--<div class="icon-box wow fadeInUp">-->
+              <!--<div class="icon"><i class="fa fa-shopping-bag"></i></div>-->
+              <!--<h4 class="title"><a href="">Eiusmod Tempor</a></h4>-->
+              <!--<p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>-->
+            <!--</div>-->
 
-            <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
-              <div class="icon"><i class="fa fa-photo"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
+            <!--<div class="icon-box wow fadeInUp" data-wow-delay="0.2s">-->
+              <!--<div class="icon"><i class="fa fa-photo"></i></div>-->
+              <!--<h4 class="title"><a href="">Magni Dolores</a></h4>-->
+              <!--<p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>-->
+            <!--</div>-->
 
-            <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
-              <div class="icon"><i class="fa fa-bar-chart"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
+            <!--<div class="icon-box wow fadeInUp" data-wow-delay="0.4s">-->
+              <!--<div class="icon"><i class="fa fa-bar-chart"></i></div>-->
+              <!--<h4 class="title"><a href="">Dolor Sitema</a></h4>-->
+              <!--<p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>-->
+            <!--</div>-->
 
           </div>
 
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            <img src="img/about-img.svg" class="img-fluid" alt="">
+            <img src="{% static 'portfolio/img/about-img.svg' %}" class="img-fluid" alt="">
           </div>
         </div>
 
         <div class="row about-extra">
           <div class="col-lg-6 wow fadeInUp">
-            <img src="img/about-extra-1.svg" class="img-fluid" alt="">
+            <img src="{% static 'portfolio/img/about-extra-1.svg' %}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
             <h4>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
@@ -164,7 +172,7 @@
 
         <div class="row about-extra">
           <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-            <img src="img/about-extra-2.svg" class="img-fluid" alt="">
+            <img src="{% static 'portfolio/img/about-extra-2.svg' %}" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
@@ -347,12 +355,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/app1.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 1</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/app1.jpg' %}" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -361,12 +369,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/web3.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 3</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/web3.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -375,12 +383,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/app2.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/app2.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 2</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/app2.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -389,12 +397,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/card2.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/card2.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 2</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/card2.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -403,12 +411,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/web2.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/web2.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 2</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/web2.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -417,12 +425,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/app3.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/app3.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 3</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/app3.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -431,12 +439,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/card1.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/card1.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 1</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/card1.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -445,12 +453,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/card3.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/card3.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 3</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/card3.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -459,12 +467,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="img/portfolio/web1.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/portfolio/web1.jpg' %}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 1</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="{% static 'portfolio/img/portfolio/web1.jpg' %}" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -492,7 +500,7 @@
             <div class="owl-carousel testimonials-carousel wow fadeInUp">
     
               <div class="testimonial-item">
-                <img src="img/testimonial-1.jpg" class="testimonial-img" alt="">
+                <img src="{% static 'portfolio/img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <p>
@@ -501,7 +509,7 @@
               </div>
     
               <div class="testimonial-item">
-                <img src="img/testimonial-2.jpg" class="testimonial-img" alt="">
+                <img src="{% static 'portfolio/img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
                 <p>
@@ -510,7 +518,7 @@
               </div>
     
               <div class="testimonial-item">
-                <img src="img/testimonial-3.jpg" class="testimonial-img" alt="">
+                <img src="{% static 'portfolio/img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
                 <p>
@@ -519,7 +527,7 @@
               </div>
     
               <div class="testimonial-item">
-                <img src="img/testimonial-4.jpg" class="testimonial-img" alt="">
+                <img src="{% static 'portfolio/img/testimonial-4.jpg' %}" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
                 <p>
@@ -528,7 +536,7 @@
               </div>
     
               <div class="testimonial-item">
-                <img src="img/testimonial-5.jpg" class="testimonial-img" alt="">
+                <img src="{% static 'portfolio/img/testimonial-5.jpg' %}" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
                 <p>
@@ -559,7 +567,7 @@
 
           <div class="col-lg-3 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="img/team-1.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/team-1.jpg' %}" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Walter White</h4>
@@ -577,7 +585,7 @@
 
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="member">
-              <img src="img/team-2.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/team-2.jpg' %}" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Sarah Jhonson</h4>
@@ -595,7 +603,7 @@
 
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="member">
-              <img src="img/team-3.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/team-3.jpg' %}" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>William Anderson</h4>
@@ -613,7 +621,7 @@
 
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="member">
-              <img src="img/team-4.jpg" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/team-4.jpg' %}" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Amanda Jepson</h4>
@@ -650,49 +658,49 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-1.png" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/clients/client-1.png' %}" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-2.png" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/clients/client-2.png' %}" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-3.png" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/clients/client-3.png' %}" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-4.png" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/clients/client-4.png' %}" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-5.png" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/clients/client-5.png' %}" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-6.png" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/clients/client-6.png' %}" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-7.png" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/clients/client-7.png' %}" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="img/clients/client-8.png" class="img-fluid" alt="">
+              <img src="{% static 'portfolio/img/clients/client-8.png' %}" class="img-fluid" alt="">
             </div>
           </div>
 
@@ -779,29 +787,27 @@
         <div class="row">
 
           <div class="col-lg-4 col-md-6 footer-info">
-            <h3>NewBiz</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+            <h3>TechFurq</h3>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Pages</h4>
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">About us</a></li>
               <li><a href="#">Services</a></li>
               <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              M-37-C, Commercial 13 Street <br>
+              Phase number 2 Ext. DHA Karachi, Pakistan.
+              <strong>Phone:</strong> +92 322 2832789<br>
+              <strong>Email:</strong>  info@techfurq.com
+         HR@techfurq.com <br>
             </p>
 
             <div class="social-links">
